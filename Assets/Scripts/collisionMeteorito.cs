@@ -24,21 +24,23 @@ public class collisionMeteorito : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Rock"))
         {
-
+            score++;
+            tScore.text = score.ToString(); 
             Destroy(coll.gameObject);
             Destroy(gameObject);
             anim.SetTrigger("Explosion");
-            Score(1);
-            tScore.text = score.ToString();
+            
+            //Score(1);
+            
         }
 
     }
-
+    /*
     public void Score(int sco)
     {
-        score += sco;
+        sco += score;
         tScore.text = score.ToString();
     }
-
+    */
 
 }

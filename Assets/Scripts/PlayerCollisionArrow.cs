@@ -14,6 +14,7 @@ public class PlayerCollisionArrow : MonoBehaviour
     [SerializeField] private TextMeshProUGUI tArrow;
     [SerializeField] private GameObject spawnArrow;
     [SerializeField] private GameObject spawnPoint;
+    [SerializeField] private IWeapon gun;
 
 
     void Start()
@@ -38,6 +39,9 @@ public class PlayerCollisionArrow : MonoBehaviour
 
             }
         }
+
+
+
     }
 
     
