@@ -2,10 +2,12 @@ using System;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerCollisionArrow : MonoBehaviour
 {
-
+    [SerializeField] private TextMeshProUGUI tScore;
+    int score = 0;
     public int arrow = 10;
    // public int Arrow => arrow;
     int speed = 4;
@@ -24,30 +26,21 @@ public class PlayerCollisionArrow : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (arrow <= 10)
+            if (arrow <= 10 && arrow >= 0)
             {
                 for (int j = 0; j < 2; j++)
                 {
                     Instantiate(spawnArrow, spawnPoint.transform.position, spawnPoint.transform.rotation);
                 }
-                transform.Translate(0, speed * Time.deltaTime, 0);
+                transform.Translate(0, 5 * speed * Time.deltaTime, 0);
                 arrow--;
                 tArrow.text = arrow.ToString();
+
             }
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D coll)
-    {
-        if (coll.gameObject.CompareTag("Arrow"))
-        {
-            arrow++;    
-            Destroy(coll.gameObject);
-            tArrow.text = arrow.ToString();
-
-        }
-    }
-
+    
 
 
 }

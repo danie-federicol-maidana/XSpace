@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Arrow
   - ArrowAttack
+  - Floor
+  - Fire
+  - Rock
   layers:
   - Default
   - TransparentFX
